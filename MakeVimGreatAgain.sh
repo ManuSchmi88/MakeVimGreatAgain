@@ -1,5 +1,5 @@
 #!/bin/bash
-#This script clones the official vundle github repository into your homedirectory
+#This script configurates vim on a unix system. First it clones Vundle into the git directory
 #then creates a new .vimrc and writes all the neat stuff into it that you need to make vim great
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 #Creates .vimrc file in homedir
