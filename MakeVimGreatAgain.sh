@@ -6,6 +6,7 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 touch ~/.vimrc
 #writes into .vimrc file
 cat > ~/.vimrc <<- "EOF"
+nnoremap <leader>q :bp<cr>:bd #<cr>
 set nocompatible              " required
 filetype off                  " required
 
@@ -20,9 +21,8 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
-
-
 " All of your Plugins must be added before the following line
+"
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -36,18 +36,34 @@ Plugin 'tmhedberg/SimpylFold'
 au BufNewFile,Bufread *.py set tabstop=4 softtabstop=3 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix
 
 "Color Scheme
-Plugin 'jnurmine/Zenburn'
-Plugin 'altercation/vim-colors-solarized'
-if has('gui_running')
-	set background=dark
-	colorscheme solarized
-else
-	colorscheme zenburn
-endif
-call togglebg#map("<F5>")
+"Plugin 'jnurmine/Zenburn'
+"Plugin 'altercation/vim-colors-solarized'
+"if has('gui_running')
+"	set background=dark
+"	colorscheme solarized
+"else
+"	colorscheme zenburn
+"endif
+"call togglebg#map("<F5>")
+Plugin 'desertink'
+colorscheme desertink
 "LineNumbers
 set nu
+
 "Autocomplete Python
 Plugin 'davidhalter/jedi-vim'
+
+"VimAirlineDashbar
+Plugin 'vim-airline/vim-airline'
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = '> '
+
+"Nerd-Tree Plugin"
+Plugin 'scrooloose/nerdtree'
+autocmd vimenter * NERDTree
+
+"BuffKill
+Plugin 'qpkorr/vim-bufkill'
 EOF
 
