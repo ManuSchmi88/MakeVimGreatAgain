@@ -25,6 +25,7 @@ Plugin 'gmarik/Vundle.vim'
 "
 call vundle#end()            " required
 filetype plugin indent on    " required
+syntax on
 
 " enable folding and loading vundle plugin for code-folding
 set foldmethod=indent
@@ -35,16 +36,6 @@ Plugin 'tmhedberg/SimpylFold'
 " enable proper python indentation
 au BufNewFile,Bufread *.py set tabstop=4 softtabstop=3 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix
 
-"Color Scheme
-"Plugin 'jnurmine/Zenburn'
-"Plugin 'altercation/vim-colors-solarized'
-"if has('gui_running')
-"	set background=dark
-"	colorscheme solarized
-"else
-"	colorscheme zenburn
-"endif
-"call togglebg#map("<F5>")
 Plugin 'desertink'
 colorscheme desertink
 "LineNumbers
