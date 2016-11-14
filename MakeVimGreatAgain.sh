@@ -25,7 +25,6 @@ Plugin 'gmarik/Vundle.vim'
 "
 call vundle#end()            " required
 filetype plugin indent on    " required
-syntax on
 
 " enable folding and loading vundle plugin for code-folding
 set foldmethod=indent
@@ -36,6 +35,16 @@ Plugin 'tmhedberg/SimpylFold'
 " enable proper python indentation
 au BufNewFile,Bufread *.py set tabstop=4 softtabstop=3 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix
 
+"Color Scheme
+"Plugin 'jnurmine/Zenburn'
+"Plugin 'altercation/vim-colors-solarized'
+"if has('gui_running')
+"	set background=dark
+"	colorscheme solarized
+"else
+"	colorscheme zenburn
+"endif
+"call togglebg#map("<F5>")
 Plugin 'desertink'
 colorscheme desertink
 "LineNumbers
@@ -58,4 +67,42 @@ autocmd vimenter * NERDTree
 Plugin 'qpkorr/vim-bufkill'
 EOF
 
-#Stillnotlovinggit
+#Configures .tmux.conf:
+#Creates .vimrc file in homedir
+touch ~/.tmux.conf
+#writes into .vimrc file
+cat > ~/.tmux.conf <<- "EOF"
+# default statusbar colors
+set-option -g status-bg colour235 #base02
+set-option -g status-fg colour136 #yellow
+set-option -g status-attr default
+
+# default window title colors
+set-window-option -g window-status-fg colour244 #base0
+set-window-option -g window-status-bg default
+#set-window-option -g window-status-attr dim
+
+# active window title colors
+set-window-option -g window-status-current-fg colour166 #orange
+set-window-option -g window-status-current-bg default
+#set-window-option -g window-status-current-attr bright
+
+# pane border
+set-option -g pane-border-fg colour166 #base02
+set-option -g pane-active-border-fg colour67 #base01
+
+# message text
+set-option -g message-bg colour235 #base02
+set-option -g message-fg colour166 #orange
+
+# pane number display
+set-option -g display-panes-active-colour colour33 #blue
+set-option -g display-panes-colour colour166 #orange
+
+# clock
+set-window-option -g clock-mode-colour colour64 #green
+
+# bell
+set-window-option -g window-status-bell-style fg=colour235,bg=colour160 #base02, red
+set -g default-terminal "screen-256color"
+EOF
