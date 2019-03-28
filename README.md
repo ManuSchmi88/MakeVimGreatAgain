@@ -4,7 +4,5 @@ It is tested on Linux (Debian) and MacOsX and seems to work because it uses no s
 but only git to get the initial Vundle Paket Manager. 
 It requires an set-up installation of VIM and tmux. 
 It enables nifty little features in vim like folding, colors, the NERDTree, etc. 
-I am probably the only guy in the world who will ever use this programm because, chances are very high, its complete
-rubbish and could be written much nicer and faster but hey, personally I kind of like it, so I got this one going for me, which is nice. Go Manu!
 
 Run it by copying it on your computer and do "sh MakeMimGreatAgain.sh", as far as I can tell do NO sudo!
